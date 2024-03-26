@@ -3,31 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --theme-primary: #0f172a;
+  --theme-primary-dark: #0a101e;
+  --theme-secondary: #1b263b;
+  --theme-text: #b3bbc6;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html,
+body,
+input {
+  background-color: var(--theme-primary);
+  color: var(--theme-text);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.list-head {
+  color: #fff;
+  /* width: 30%; */
+  padding: 5px;
+}
+
+.list-item {
+  /* width: 30%; */
+  color: #8c8c8c;
+  padding: 5px;
+}
+
+.drop-area:hover {
+  background-color: rgba(0, 0, 255, 0.5);
 }
